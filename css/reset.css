@@ -47,6 +47,11 @@ img, fieldset {
     border: 0 none;
 }
 
+/* button reset */
+button {
+    border: 0;
+}
+
 /* IR (Image Replacement) */
 /* Phark Method */
 .ir_pm {

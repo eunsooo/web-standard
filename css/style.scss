@@ -37,17 +37,12 @@
 /* contents layout */
 #cont {
     &_nav {
+        display: none;
         background-color: #f6fdff;
     }
-    &_tit {
-        background-color: #eaf7fd;
-    }
-    &_ban {
-        background-color: #dceff7;
-    }
-    &_cont {
-        background-color: #f6fdff;
-    }
+    &_tit {background-color: #eaf7fd;}
+    &_ban {background-color: #dceff7;}
+    &_cont {background-color: #f6fdff;}
 }
 
 /* container */
@@ -164,11 +159,12 @@
         width: 60px;
         height: 60px;
         background: url(../img/icon.png) no-repeat 0 -600px;
+        &.on {background-position: 0 -660px;}
     }
 }
 
 /* banner */
-.ban {
+/*.ban {
     position: relative;
     padding: 24px 0  20px;
     a {
@@ -204,6 +200,65 @@
             img {
                 border: 4px solid #dcdcdc;
                 &:hover {border-color: #98dcdc;}
+            }
+        }
+    }
+} */
+
+/* slick banner */
+.ban {
+    position: relative;
+    padding: 24px 0  40px;
+    .slick-prev {
+        position: absolute;
+        top: 80px;
+        left: -80px;
+        width: 43px;
+        height: 43px;
+        background: url(../img/icon.png) no-repeat -150px 0;
+        &:hover {background-position: -193px 0;}
+        text-indent: -9999px;
+    }
+    .slick-next {
+        position: absolute;
+        top: 80px;
+        right: -80px;
+        width: 43px;
+        height: 43px;
+        background: url(../img/icon.png) no-repeat -150px -43px;
+        &:hover {background-position: -193px -43px;}
+        text-indent: -9999px;
+    }
+    img {
+        border: 4px solid #dcdcdc;
+        &:hover {border-color: #98dcdc;}
+    }
+    .slick {
+        &-slide {
+            margin: 10px;
+        }
+        &-dots {
+            display: block;
+            position: absolute;
+            text-align: center;
+            bottom: 15px;
+            width: 100%;
+            li {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin: 5px;
+                button {
+                    display: block;
+                    line-height: 0;
+                    font-size: 0;
+                    width: 8px;
+                    height: 8px;
+                    background: #5dbfed;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                &.slick-active button {background: #0a75a7;}
             }
         }
     }
@@ -580,13 +635,13 @@
     }
     .gallery_btn {
         position: absolute;
-        top: 5px;
+        top: 7px;
         right: 5px;
         ul {
             overflow: hidden;
             li {
                 float: left;
-                margin: 7px 2px;
+                margin: 1px 2px;
                 a {
                     display: block;
                     width: 23px;
@@ -608,6 +663,28 @@
     }
     .gallery_img {
         img {width: 100%;}
+    }
+}
+
+/* slick gallery */
+.gallery_btn {
+    button {
+        float: left;
+        display: block;
+        margin: 1px 2px;
+        width: 23px;
+        height: 23px;
+        background: url(../img/icon.png) no-repeat;
+    }
+    .gb_icon {
+        &1 {background-position: -150px -120px;}
+        &2 {background-position: -150px -143px;}
+        &3 {background-position: -150px -166px;}
+        &4 {background-position: -150px -189px;}
+        &1:hover {background-position: -173px -120px;}
+        &2:hover {background-position: -173px -143px;}
+        &3:hover {background-position: -173px -166px;}
+        &4:hover {background-position: -173px -189px;}
     }
 }
 
@@ -712,4 +789,28 @@
         }
     }
     address {margin-bottom: 25px;}
+}
+
+/* layer popup */
+#layer {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 700px;
+    border: 10px solid #dceff7;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    img {
+        display: block; // inline-whiteblank reset
+        width: 100%;
+    }
+    .close {
+        position: absolute;
+        padding: 1px 6px;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        background: #0093bd;
+        &:hover {text-decoration: underline;}
+    }
 }

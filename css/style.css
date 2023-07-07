@@ -29,6 +29,7 @@
 
 /* contents layout */
 #cont_nav {
+  display: none;
   background-color: #f6fdff;
 }
 #cont_tit {
@@ -170,61 +171,114 @@
   height: 60px;
   background: url(../img/icon.png) no-repeat 0 -600px;
 }
+.tit .btn.on {
+  background-position: 0 -660px;
+}
 
 /* banner */
+/*.ban {
+    position: relative;
+    padding: 24px 0  20px;
+    a {
+        &.prev {
+            position: absolute;
+            top: 60px;
+            left: -80px;
+            width: 43px;
+            height: 43px;
+            background: url(../img/icon.png) no-repeat -150px 0;
+            &:hover {background-position: -193px 0;}
+        }
+        &.next {
+            position: absolute;
+            top: 60px;
+            right: -80px;
+            width: 43px;
+            height: 43px;
+            background: url(../img/icon.png) no-repeat -150px -43px;
+            &:hover {background-position: -193px -43px;}
+        }
+    }
+    ul {
+        overflow: hidden;
+        li {
+            float: left;
+            width: 330px;
+            &:last-child {text-align: right;}
+            &:nth-child(2) {text-align: center;}
+            .ban_img1 { text-align: left;}
+            .ban_img2 { text-align: center;}
+            .ban_img3 { text-align: right;}
+            img {
+                border: 4px solid #dcdcdc;
+                &:hover {border-color: #98dcdc;}
+            }
+        }
+    }
+} */
+/* slick banner */
 .ban {
   position: relative;
-  padding: 24px 0 20px;
+  padding: 24px 0 40px;
 }
-.ban a.prev {
+.ban .slick-prev {
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: -80px;
   width: 43px;
   height: 43px;
   background: url(../img/icon.png) no-repeat -150px 0;
+  text-indent: -9999px;
 }
-.ban a.prev:hover {
+.ban .slick-prev:hover {
   background-position: -193px 0;
 }
-.ban a.next {
+.ban .slick-next {
   position: absolute;
-  top: 60px;
+  top: 80px;
   right: -80px;
   width: 43px;
   height: 43px;
   background: url(../img/icon.png) no-repeat -150px -43px;
+  text-indent: -9999px;
 }
-.ban a.next:hover {
+.ban .slick-next:hover {
   background-position: -193px -43px;
 }
-.ban ul {
-  overflow: hidden;
-}
-.ban ul li {
-  float: left;
-  width: 330px;
-}
-.ban ul li:last-child {
-  text-align: right;
-}
-.ban ul li:nth-child(2) {
-  text-align: center;
-}
-.ban ul li .ban_img1 {
-  text-align: left;
-}
-.ban ul li .ban_img2 {
-  text-align: center;
-}
-.ban ul li .ban_img3 {
-  text-align: right;
-}
-.ban ul li img {
+.ban img {
   border: 4px solid #dcdcdc;
 }
-.ban ul li img:hover {
+.ban img:hover {
   border-color: #98dcdc;
+}
+.ban .slick-slide {
+  margin: 10px;
+}
+.ban .slick-dots {
+  display: block;
+  position: absolute;
+  text-align: center;
+  bottom: 15px;
+  width: 100%;
+}
+.ban .slick-dots li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+}
+.ban .slick-dots li button {
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  width: 8px;
+  height: 8px;
+  background: #5dbfed;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ban .slick-dots li.slick-active button {
+  background: #0a75a7;
 }
 
 /* contents */
@@ -625,7 +679,7 @@
 }
 .gallery .gallery_btn {
   position: absolute;
-  top: 5px;
+  top: 7px;
   right: 5px;
 }
 .gallery .gallery_btn ul {
@@ -633,7 +687,7 @@
 }
 .gallery .gallery_btn ul li {
   float: left;
-  margin: 7px 2px;
+  margin: 1px 2px;
 }
 .gallery .gallery_btn ul li a {
   display: block;
@@ -667,6 +721,40 @@
 }
 .gallery .gallery_img img {
   width: 100%;
+}
+
+/* slick gallery */
+.gallery_btn button {
+  float: left;
+  display: block;
+  margin: 1px 2px;
+  width: 23px;
+  height: 23px;
+  background: url(../img/icon.png) no-repeat;
+}
+.gallery_btn .gb_icon1 {
+  background-position: -150px -120px;
+}
+.gallery_btn .gb_icon2 {
+  background-position: -150px -143px;
+}
+.gallery_btn .gb_icon3 {
+  background-position: -150px -166px;
+}
+.gallery_btn .gb_icon4 {
+  background-position: -150px -189px;
+}
+.gallery_btn .gb_icon1:hover {
+  background-position: -173px -120px;
+}
+.gallery_btn .gb_icon2:hover {
+  background-position: -173px -143px;
+}
+.gallery_btn .gb_icon3:hover {
+  background-position: -173px -166px;
+}
+.gallery_btn .gb_icon4:hover {
+  background-position: -173px -189px;
 }
 
 /* login */
@@ -776,6 +864,32 @@
 }
 .footer address {
   margin-bottom: 25px;
+}
+
+/* layer popup */
+#layer {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 700px;
+  border: 10px solid #dceff7;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+#layer img {
+  display: block;
+  width: 100%;
+}
+#layer .close {
+  position: absolute;
+  padding: 1px 6px;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  background: #0093bd;
+}
+#layer .close:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */
