@@ -25,6 +25,11 @@ body, input, textarea, button, table {
     line-height: 1.5;
 }
 
+/* font style reset */
+em, address {
+    font-style: normal;
+}
+
 /* bullet style reset */
 dl, ul, li, ol, menu {
     list-style: none;
@@ -35,6 +40,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 13px;
     color: #222;
     font-weight: normal;
+}
+
+/* border reset */
+img, fieldset {
+    border: 0 none;
 }
 
 /* IR (Image Replacement) */
